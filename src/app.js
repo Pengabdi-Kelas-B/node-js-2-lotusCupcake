@@ -1,19 +1,18 @@
-const express = require('express')
-const routes = require('./routes')
-const connectDB = require('./config/mongodb')
-const app = express()
+const express = require("express");
+const routes = require("./routes");
+const connectDB = require("./config/mongodb");
+const app = express();
 
-require('dotenv').config()
+require("dotenv").config();
 
-const port = process.env.PORT
+const port = process.env.PORT;
 
-connectDB()
+connectDB();
 
 app.use(express.json());
 
-app.use("/api/v1",routes)
-
+app.use("/api/v1", routes);
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`)
-})
+  console.log(`Server running on port ${port}`);
+});
